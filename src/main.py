@@ -9,8 +9,10 @@ def main(file_name: str):
     with open(file_name) as f:
         code = f.read()
 
-    for mutated_code in code_mutations(code, types_to_mutations):
-        print("----------------mutant-------------")
+    for index, (mutated_code, name) in enumerate(
+        code_mutations(code, types_to_mutations)
+    ):
+        print(f"----------------mutant {index} {name}-------------")
         print(mutated_code)
 
 
